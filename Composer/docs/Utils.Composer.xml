@@ -1,0 +1,286 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Utils.Composer</name>
+    </assembly>
+    <members>
+        <member name="T:WeMicroIt.Utils.Composer.Compose">
+            <summary>
+        This Class contains all of the logic which goes into making Composer work.
+      </summary><remark>
+        <para>The logic is abstracted away so that it can reused for both a console app, a winforms &amp; eventually UWP.</para>
+      </remark> /// <summary>
+        This Class contains all of the logic which goes into making Composer work.
+      </summary><remark>
+        <para>The logic is abstracted away so that it can reused for both a console app, a winforms &amp; eventually UWP.</para>
+      </remark> 
+        </member>
+        <member name="P:WeMicroIt.Utils.Composer.Compose.Templater">
+            <value>
+        Gets/Sets the templater full path.
+      </value> 
+        </member>
+        <member name="P:WeMicroIt.Utils.Composer.Compose.Reader">
+            <value>
+        Gets/Sets the readers full path.
+      </value> 
+        </member>
+        <member name="P:WeMicroIt.Utils.Composer.Compose.Writer">
+            <value>
+        Gets/Sets the writers full path.
+      </value> 
+        </member>
+        <member name="M:WeMicroIt.Utils.Composer.Compose.#ctor">
+            <summary>
+        The default constructor used to build an instance of Composer.
+      </summary><remark>
+        <para> This also initiatizes the file manager.</para>
+      </remark><example>
+        <code>
+          Compose composer = new Compose();
+        </code>
+      </example> 
+        </member>
+        <member name="M:WeMicroIt.Utils.Composer.Compose.Process(WeMicroIt.Utils.Composer.Models.ComposeData)">
+            <summary>
+        Is the central control loop which initiates all the actions.
+      </summary><param name="Data">What needs to happen</param><returns>
+        If the cycles were successfully completed.
+      </returns><example>
+        <code>
+          Compose composer = new Compose();
+          bool rc= composer.Process(ComposeData);
+        </code>
+      </example> 
+        </member>
+        <member name="M:WeMicroIt.Utils.Composer.Compose.SetStreams(System.String,System.String)">
+            <summary>
+        Sets the path to the read &amp; write files streams.
+      </summary><param name="read">Path to the read file.</param><param name="write">Path to the write file.</param><returns>
+        If the files/directories are successfully exist.
+      </returns><example>
+        <code>
+          Compose composer = new Compose();
+          bool rc= composer.SetStreams(string, string);
+        </code>
+      </example> 
+        </member>
+        <member name="M:WeMicroIt.Utils.Composer.Compose.SetStreams(System.String,System.String,System.String)">
+            <summary>
+        Sets the path to the all 3 files streams.
+      </summary><param name="read">Path to the read file.</param><param name="write">Path to the write file.</param><param name="template">Path to the template file.</param><returns>
+        If all the streams are successfully set.
+      </returns><example>
+        <code>
+          Compose composer = new Compose();
+          bool rc= composer.SetStreams(string, string, string);
+        </code>
+      </example> 
+        </member>
+        <member name="T:WeMicroIt.Utils.Composer.Models.ComposeData">
+            <summary>
+        What needs to happen throughout the cycle
+      </summary> 
+        </member>
+        <member name="P:WeMicroIt.Utils.Composer.Models.ComposeData.Cycles">
+            <value>
+        What actually needs to happen
+      </value><seealso cref="T:WeMicroIt.Utils.Composer.Models.Cycle" /> 
+        </member>
+        <member name="P:WeMicroIt.Utils.Composer.Models.ComposeData.GenerateIndexes">
+            <value>
+        Should index pages be generated.
+      </value> 
+        </member>
+        <member name="P:WeMicroIt.Utils.Composer.Models.ComposeData.JsonHierachy">
+            <value>
+        Does a JSON Hierachy document need to be made.
+      </value> 
+        </member>
+        <member name="P:WeMicroIt.Utils.Composer.Models.ComposeData.NodeJS">
+            <value>
+        Does a NODEJS version need to be built.
+      </value> 
+        </member>
+        <member name="M:WeMicroIt.Utils.Composer.Models.ComposeData.#ctor">
+            <summary>
+        Sets the default values for both <seealso cref="P:WeMicroIt.Utils.Composer.Models.ComposeData.GenerateIndexes" /> and <seealso cref="P:WeMicroIt.Utils.Composer.Models.ComposeData.NodeJS" />.
+      </summary><example>
+        <code>
+          ComposeData composeData = new ComposeData();
+        </code>
+      </example> 
+        </member>
+        <member name="T:WeMicroIt.Utils.Composer.Models.Cycle">
+            <summary>
+        What is the data to be used for each operation
+      </summary><remark>
+        <para>
+          Contains a wide range of variables which are used to perform a process.
+        </para>
+      </remark> 
+        </member>
+        <member name="P:WeMicroIt.Utils.Composer.Models.Cycle.ActionType">
+            <value>
+        What is to occur.
+      </value> 
+        </member>
+        <member name="P:WeMicroIt.Utils.Composer.Models.Cycle.InputType">
+            <value>
+        What type of file is the source data from.
+      </value> 
+        </member>
+        <member name="P:WeMicroIt.Utils.Composer.Models.Cycle.OutputType">
+            <value>
+        How should the output be saved.
+      </value> 
+        </member>
+        <member name="P:WeMicroIt.Utils.Composer.Models.Cycle.SourcePath">
+            <value>
+        Where is the data coming from
+      </value> 
+        </member>
+        <member name="P:WeMicroIt.Utils.Composer.Models.Cycle.TemplatePath">
+            <value>
+        What template is to be used
+      </value> 
+        </member>
+        <member name="P:WeMicroIt.Utils.Composer.Models.Cycle.DestinationDir">
+            <value>
+        Where is the data to go.
+      </value> 
+        </member>
+        <member name="P:WeMicroIt.Utils.Composer.Models.Cycle.NewFileName">
+            <value>
+        What should the output file be called.
+      </value> 
+        </member>
+        <member name="P:WeMicroIt.Utils.Composer.Models.Cycle.QueryPath">
+            <value>
+        What node/element should be used for the splitting.
+      </value> 
+        </member>
+        <member name="P:WeMicroIt.Utils.Composer.Models.Cycle.GroupPath">
+            <value>
+        On what data should the nodes be grouped.
+      </value> 
+        </member>
+        <member name="P:WeMicroIt.Utils.Composer.Models.Cycle.DevEnvironment">
+            <value>
+        Is it debug or release.
+      </value> 
+        </member>
+        <member name="P:WeMicroIt.Utils.Composer.Models.Cycle.Version">
+            <value>
+        What version of the documentation is it.
+      </value> 
+        </member>
+        <member name="P:WeMicroIt.Utils.Composer.Models.Cycle.Preserve">
+            <value>
+        Should the source data be preserved upon completion.
+      </value> 
+        </member>
+        <member name="P:WeMicroIt.Utils.Composer.Models.Cycle.FullPath">
+            <value>
+        What is the full path including <seealso cref="P:WeMicroIt.Utils.Composer.Models.Cycle.FullDestination" /> &amp; <seealso cref="P:WeMicroIt.Utils.Composer.Models.Cycle.FullName" />.
+      </value> 
+        </member>
+        <member name="P:WeMicroIt.Utils.Composer.Models.Cycle.FullDestination">
+            <value>
+        Where should the files go. Note can combine <seealso cref="P:WeMicroIt.Utils.Composer.Models.Cycle.DevEnvironment" />, <seealso cref="P:WeMicroIt.Utils.Composer.Models.Cycle.Version" /> &amp; <seealso cref="P:WeMicroIt.Utils.Composer.Models.Cycle.DestinationDir" />.
+      </value> 
+        </member>
+        <member name="P:WeMicroIt.Utils.Composer.Models.Cycle.FullName">
+            <value>
+        What is the name of the file including the <seealso cref="P:WeMicroIt.Utils.Composer.Models.Cycle.OutputType" />.
+      </value> 
+        </member>
+        <member name="M:WeMicroIt.Utils.Composer.Models.Cycle.#ctor">
+            <summary>
+        Build a default cycle
+      </summary><example>
+        <code>
+          Cycle cycle = new Cycle();
+        </code>
+      </example> 
+        </member>
+        <member name="M:WeMicroIt.Utils.Composer.Models.Cycle.#ctor(WeMicroIt.Utils.Composer.Resources.Enums.ActionType)">
+            <summary>
+        Build a default cycle using the specifed <paramref name="type" />.
+      </summary><remark>
+        <para>
+          Sets all the sensible defaults based upon the <paramref name="type" />.
+      </para>
+      </remark><param name="type">What is the action type which should be used for this cycle</param><example>
+        <code>
+          Cycle cycle = new Cycle(ActionType);
+        </code>
+      </example> 
+        </member>
+        <member name="T:WeMicroIt.Utils.Composer.Resources.Enums.ActionType">
+            <summary>
+        What are the different types of actions that can occur as a part of composer.
+      </summary> 
+        </member>
+        <member name="F:WeMicroIt.Utils.Composer.Resources.Enums.ActionType.Unknown">
+            <value>
+        Unknown
+      </value> 
+        </member>
+        <member name="F:WeMicroIt.Utils.Composer.Resources.Enums.ActionType.Transform">
+            <value>
+        The file being read needs to be transformed into a different structure.
+      </value> 
+        </member>
+        <member name="F:WeMicroIt.Utils.Composer.Resources.Enums.ActionType.Split">
+            <value>
+        The file being read needs to be split into multiple files.
+      </value> 
+        </member>
+        <member name="F:WeMicroIt.Utils.Composer.Resources.Enums.ActionType.SplitAndTransform">
+            <value>
+        The file being read needs to be split into multiple files and each file is grouped on a property.
+      </value> 
+        </member>
+        <member name="F:WeMicroIt.Utils.Composer.Resources.Enums.ActionType.FileRename">
+            <value>
+        The file/folder being read needs to be renamed.
+      </value> 
+        </member>
+        <member name="T:WeMicroIt.Utils.Composer.Resources.Enums.GenerationType">
+            <summary>
+        What are the different files that can be generated.
+      </summary> 
+        </member>
+        <member name="F:WeMicroIt.Utils.Composer.Resources.Enums.GenerationType.Markdown">
+            <value>
+        A basic markdown file
+      </value> 
+        </member>
+        <member name="F:WeMicroIt.Utils.Composer.Resources.Enums.GenerationType.XML">
+            <value>
+        An XML document.
+      </value> 
+        </member>
+        <member name="F:WeMicroIt.Utils.Composer.Resources.Enums.GenerationType.Html">
+            <value>
+        A webpage
+      </value> 
+        </member>
+        <member name="F:WeMicroIt.Utils.Composer.Resources.Enums.GenerationType.JSON">
+            <value>
+        A JSON file
+      </value> 
+        </member>
+        <member name="F:WeMicroIt.Utils.Composer.Resources.Enums.GenerationType.CSV">
+            <value>
+        A CSV (Comma sperated value) file
+      </value> 
+        </member>
+        <member name="F:WeMicroIt.Utils.Composer.Resources.Enums.GenerationType.Raw">
+            <value>
+        A raw data file
+      </value> 
+        </member>
+    </members>
+</doc>

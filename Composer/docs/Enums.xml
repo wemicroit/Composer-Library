@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<doc>
+  <enums name="ActionType">
+    <enum>
+      <summary>
+        What are the different types of actions that can occur as a part of composer.
+      </summary>
+    </enum>
+    <field name="Unknown">
+      <value>
+        Unknown
+      </value>
+    </field>
+    <field name="Transform">
+      <value>
+        The file being read needs to be transformed into a different structure.
+      </value>
+    </field>
+    <field name="Split">
+      <value>
+        The file being read needs to be split into multiple files.
+      </value>
+    </field>
+    <field name="SplitAndTransform">
+      <value>
+        The file being read needs to be split into multiple files and each file is grouped on a property.
+      </value>
+    </field>
+    <field name="FileRename">
+      <value>
+        The file/folder being read needs to be renamed.
+      </value>
+    </field>
+  </enums>
+  <enums name="GenerationType">
+    <enum>
+      <summary>
+        What are the different files that can be generated.
+      </summary>
+    </enum>
+    <field name="Markdown">
+      <value>
+        A basic markdown file
+      </value>
+    </field>
+    <field name="XML">
+      <value>
+        An XML document.
+      </value>
+    </field>
+    <field name="HTML">
+      <value>
+        A webpage
+      </value>
+    </field>
+    <field name="JSON">
+      <value>
+        A JSON file
+      </value>
+    </field>
+    <field name="CSV">
+      <value>
+        A CSV (Comma sperated value) file
+      </value>
+    </field>
+    <field name="Raw">
+      <value>
+        A raw data file
+      </value>
+    </field>
+  </enums>
+</doc>
