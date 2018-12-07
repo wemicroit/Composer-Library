@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<doc>
+  <models name="ComposeData">
+    <model>
+      <summary>
+        What needs to happen throughout the cycle
+      </summary>
+    </model>
+    <constructor name="Default">
+      <summary>
+        Sets the default values for both <seealso cref="ComposeData.GenerateIndexes" /> and <seealso cref="ComposeData.NodeJS"/>.
+      </summary>
+      <example>
+        <code>
+          ComposeData composeData = new ComposeData();
+        </code>
+      </example>
+    </constructor>
+    <properties name="Cycles">
+      <value>
+        What actually needs to happen
+      </value>
+      <seealso cref="Cycle"/>
+    </properties>
+    <properties name="GenerateIndexes">
+      <value>
+        Should index pages be generated.
+      </value>
+    </properties>
+    <properties name="JsonHierachy">
+      <value>
+        Does a JSON Hierachy document need to be made.
+      </value>
+    </properties>
+    <properties name="NodeJS">
+      <value>
+        Does a NODEJS version need to be built.
+      </value>
+    </properties>
+  </models>
+  <models name="Cycle">
+    <model>
+      <summary>
+        What is the data to be used for each operation
+      </summary>
+      <remark>
+        <para>
+          Contains a wide range of variables which are used to perform a process.
+        </para>
+      </remark>
+    </model>
+    <constructor name="Default">
+      <summary>
+        Build a default cycle
+      </summary>
+      <example>
+        <code>
+          Cycle cycle = new Cycle();
+        </code>
+      </example>
+    </constructor>
+    <constructor name="Type">
+      <summary>
+        Build a default cycle using the specifed <paramref name="type"/>.
+      </summary>
+      <remark>
+        <para>
+          Sets all the sensible defaults based upon the <paramref name="type"/>.
+      </para>
+      </remark>
+      <param name="type">What is the action type which should be used for this cycle</param>
+      <example>
+        <code>
+          Cycle cycle = new Cycle(ActionType);
+        </code>
+      </example>
+    </constructor>
+    <properties name="ActionType">
+      <value>
+        What is to occur.
+      </value>
+    </properties>
+    <properties name="InputType">
+      <value>
+        What type of file is the source data from.
+      </value>
+    </properties>
+    <properties name="OutputType">
+      <value>
+        How should the output be saved.
+      </value>
+    </properties>
+    <properties name="SourcePath">
+      <value>
+        Where is the data coming from
+      </value>
+    </properties>
+    <properties name="TemplatePath">
+      <value>
+        What template is to be used
+      </value>
+    </properties>
+    <properties name="DestinationDir">
+      <value>
+        Where is the data to go.
+      </value>
+    </properties>
+    <properties name="NewFileName">
+      <value>
+        What should the output file be called.
+      </value>
+    </properties>
+    <properties name="QueryPath">
+      <value>
+        What node/element should be used for the splitting.
+      </value>
+    </properties>
+    <properties name="GroupPath">
+      <value>
+        On what data should the nodes be grouped.
+      </value>
+    </properties>
+    <properties name="DevEnvironment">
+      <value>
+        Is it debug or release.
+      </value>
+    </properties>
+    <properties name="Version">
+      <value>
+        What version of the documentation is it.
+      </value>
+    </properties>
+    <properties name="Preserve">
+      <value>
+        Should the source data be preserved upon completion.
+      </value>
+    </properties>
+    <properties name="FullPath">
+      <value>
+        What is the full path including <seealso cref="Cycle.FullDestination"/> &amp; <seealso cref="Cycle.FullName"/>.
+      </value>
+    </properties>
+    <properties name="FullDestination">
+      <value>
+        Where should the files go. Note can combine <seealso cref="DevEnvironment"/>, <seealso cref="Version"/> &amp; <seealso cref="DestinationDir"/>.
+      </value>
+    </properties>
+    <properties name="FullName">
+      <value>
+        What is the name of the file including the <seealso cref="Cycle.OutputType"/>.
+      </value>
+    </properties>
+  </models>
+</doc>
