@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<doc>
+  <classes name="Compose">
+    <class>
+      <summary>
+        This Class contains all of the logic which goes into making Composer work.
+      </summary>
+      <remark>
+        <para>The logic is abstracted away so that it can reused for both a console app, a winforms &amp; eventually UWP.</para>
+      </remark>
+    </class>
+    <constructor name="Default">
+      <summary>
+        The default constructor used to build an instance of Composer.
+      </summary>
+      <remark>
+        <para> This also initiatizes the file manager.</para>
+      </remark>
+      <example>
+        <code>
+          Compose composer = new Compose();
+        </code>
+      </example>
+    </constructor>
+    <properties name="Reader">
+      <value>
+        Gets/Sets the readers full path.
+      </value>
+    </properties>
+    <properties name="Writer">
+      <value>
+        Gets/Sets the writers full path.
+      </value>
+    </properties>
+    <properties name="Templater">
+      <value>
+        Gets/Sets the templater full path.
+      </value>
+    </properties>
+    <methods name="Process">
+      <summary>
+        Is the central control loop which initiates all the actions.
+      </summary>
+      <param name="Data">What needs to happen</param>
+      <returns>
+        If the cycles were successfully completed.
+      </returns>
+      <example>
+        <code>
+          Compose composer = new Compose();
+          bool rc= composer.Process(ComposeData);
+        </code>
+      </example>
+    </methods>
+    <methods name="SetStreams" version="Both">
+      <summary>
+        Sets the path to the read &amp; write files streams.
+      </summary>
+      <param name="read">Path to the read file.</param>
+      <param name="write">Path to the write file.</param>
+      <returns>
+        If the files/directories are successfully exist.
+      </returns>
+      <example>
+        <code>
+          Compose composer = new Compose();
+          bool rc= composer.SetStreams(string, string);
+        </code>
+      </example>
+    </methods>
+    <methods name="SetStreams" version="All">
+      <summary>
+        Sets the path to the all 3 files streams.
+      </summary>
+      <param name="read">Path to the read file.</param>
+      <param name="write">Path to the write file.</param>
+      <param name="template">Path to the template file.</param>
+      <returns>
+        If all the streams are successfully set.
+      </returns>
+      <example>
+        <code>
+          Compose composer = new Compose();
+          bool rc= composer.SetStreams(string, string, string);
+        </code>
+      </example>
+    </methods>
+  </classes>
+</doc>
